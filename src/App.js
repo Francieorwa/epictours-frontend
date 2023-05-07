@@ -21,7 +21,7 @@ function App() {
   const [sortOption, setSortOption] = useState("");
 
   useEffect(() => {
-    fetch(`https://epic-hcpr.onrender.com`)
+    fetch(`https://rocky-cove-76026.herokuapp.com/`)
       .then((response) => response.json())
       .then((data) => {
         setDestinations(data);
