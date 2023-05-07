@@ -50,14 +50,38 @@ function Destinations({
           <h1 className="text-4xl font-bold text-center text-purple-900 mb-8">
             Escape to Your Dream Destination
           </h1>
-          <div className="grid grid-cols-1 gap-3 px-28 py-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {/* <div className="grid grid-cols-1 gap-3 px-28 py-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredDestinations.map((destination) => (
               <DestinationCard key={destination.id} destination={destination} />
             ))}
-          </div>
+          </div> */}
+
+          <div className="grid grid-cols-1 gap-3 px-28 py-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {/* if the array is empty just show empy 10 boxes */}
+          {filteredDestinations.length === 0 ? (
+            <>
+              {[...Array(10)].map((_, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center w-full h-full p-5 bg-white rounded-lg shadow-md"
+                >
+                  <div className="w-full h-40 bg-gray-200 rounded-lg"></div>
+                  <div className="w-full h-4 mt-3 bg-gray-200 rounded-lg"></div>
+                  <div className="w-full h-4 mt-3 bg-gray-200 rounded-lg"></div>
+                  <div className="w-full h-4 mt-3 bg-gray-200 rounded-lg"></div>
+                </div>
+              ))}
+            </>
+          ) : (
+            filteredDestinations.map((destination) => (
+              <DestinationCard key={destination.id} destination={destination} />
+            ))
+          )}
+        </div>
         </div>
       </div>
     </>
   );
 }
+
 export default Destinations;

@@ -15,7 +15,7 @@ export default function AuthProvider({ children }) {
 
   // login
   const login = (email, password) => {
-    fetch("https://epic-hcpr.onrender.com/login", {
+    fetch("https://rocky-cove-76026.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export default function AuthProvider({ children }) {
 
   // Register
   const register = (name, email, password) => {
-    fetch("https://epic-hcpr.onrender.com/signup", {
+    fetch("https://rocky-cove-76026.herokuapp.com/usrs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -104,7 +104,7 @@ export default function AuthProvider({ children }) {
 
   // check if user is logged in
   useEffect(() => {
-    fetch("https://epic-hcpr.onrender.com/loggedin", {
+    fetch("https://rocky-cove-76026.herokuapp.com/loggedin", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

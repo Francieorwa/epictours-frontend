@@ -62,7 +62,7 @@ const Booking = () => {
       price: price,
       usr_id: user.id
     };
-      fetch("https://epic-hcpr.onrender.com/books", {
+      fetch("https://rocky-cove-76026.herokuapp.com/books", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
